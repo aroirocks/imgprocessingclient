@@ -27,7 +27,7 @@ export default function UserInputFormMutiple() {
   const onDownload = () => {
     //send data to server
     axios({
-      url: '/processall',
+      url: `${URL}/processall`,
       method: 'POST',
       responseType: 'blob', // important
       data: obj,

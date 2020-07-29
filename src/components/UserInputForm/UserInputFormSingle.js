@@ -35,7 +35,7 @@ export default function UserInputFormSingle(props) {
     Obj.map((obj) => {
       if (parseInt(event.target.name) === parseInt(obj.id)) {
         axios({
-          url: '/process',
+          url: `${URL}/process`,
           method: 'POST',
           responseType: 'blob', // important
           data: obj,
@@ -78,8 +78,6 @@ export default function UserInputFormSingle(props) {
       return img_name;
     }
   };
-
-
 
   const onChange = (input, value) => {
     input = input.split(':');
@@ -136,9 +134,7 @@ export default function UserInputFormSingle(props) {
                       <option value="60">60%</option>
                       <option value="80">80%</option>
                     </select>
-                    <small className="form-text text-muted">
-                      Compress
-                    </small>
+                    <small className="form-text text-muted">Compress</small>
                   </div>
                 </div>
                 <div className="col-xl-3 m-1">
@@ -159,9 +155,7 @@ export default function UserInputFormSingle(props) {
                           <option value="webp">WEBP</option>
                           <option value="tiff">TIFF</option>
                         </select>
-                        <small className="form-text text-muted">
-                          From
-                        </small>
+                        <small className="form-text text-muted">From</small>
                       </div>
                     </div>
 
@@ -180,9 +174,7 @@ export default function UserInputFormSingle(props) {
                           <option value="webp">WEBP</option>
                           <option value="tiff">TIFF</option>
                         </select>
-                        <small className="form-text text-muted">
-                          To
-                        </small>
+                        <small className="form-text text-muted">To</small>
                       </div>
                     </div>
                   </div>
@@ -194,15 +186,13 @@ export default function UserInputFormSingle(props) {
                       <div className="form-group">
                         <label htmlFor="Width"></label>
                         <input
-                          type='text'
+                          type="text"
                           className="form-control"
                           placeholder="800"
                           onChange={handlewidthChange}
                           name={index + ':resizeHeight'}
                         />
-                        <small className="form-text text-muted">
-                          Width
-                        </small>
+                        <small className="form-text text-muted">Width</small>
                       </div>
                     </div>
 
@@ -210,15 +200,13 @@ export default function UserInputFormSingle(props) {
                       <div className="form-group">
                         <label htmlFor="exampleInputEmail1"></label>
                         <input
-                          type='text'
+                          type="text"
                           className="form-control"
                           placeholder="560"
                           onChange={handleheightChange}
                           name={index + ':resizeWidth'}
                         />
-                        <small className="form-text text-muted">
-                          Height
-                        </small>
+                        <small className="form-text text-muted">Height</small>
                       </div>
                     </div>
                   </div>

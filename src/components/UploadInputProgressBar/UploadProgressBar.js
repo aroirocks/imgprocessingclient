@@ -13,6 +13,7 @@ import {
 } from '../Actions/Index';
 import { makeStyles } from '@material-ui/core/styles';
 import Alert from '@material-ui/lab/Alert';
+import { URL } from '../../keys';
 
 //Testing
 import filetype from '../MIMETYPE/FileType';
@@ -20,7 +21,6 @@ import filetype from '../MIMETYPE/FileType';
 
 const Main = () => {
   const progressBarStyle = { height: '25px' };
-  const env_var = process.env.BACKEND_CONNECT;
 
   const [Img, setImg] = useState('');
   const [imgSize, setimgSize] = useState(null);
@@ -106,7 +106,7 @@ const Main = () => {
       axios.defaults.withCredentials = true;
 
       axios
-        .post(`${env_var}/upload`, data, config)
+        .post(`${URL}/upload`, data, config)
         .then((res) => {
           const str = res.data;
           const filename = str.map((part) => part.split('uploads/')[1]);
