@@ -40,6 +40,7 @@ export default function UserInputFormSingle(props) {
           responseType: 'blob', // important
           data: obj,
         }).then((res) => {
+          console.log("response: "+ res)
           var filename = '';
           var disposition = res.headers['content-disposition'];
           if (disposition && disposition.indexOf('attachment') !== -1) {
@@ -49,6 +50,7 @@ export default function UserInputFormSingle(props) {
               filename = matches[1].replace(/['"]/g, '');
               let txtremoved = /\____(.*?)\./;
               filename = filename.replace(txtremoved, '.');
+              conole.log("FIlename: " +filename)
             }
           }
           const url = window.URL.createObjectURL(new Blob([res.data]));
