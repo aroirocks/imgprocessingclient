@@ -1,5 +1,5 @@
 const InitialState = {
-  show_confirmation_box: false,
+  show_confirmation_box: true,
   file_count: 0,
   data: null,
   errors: [],
