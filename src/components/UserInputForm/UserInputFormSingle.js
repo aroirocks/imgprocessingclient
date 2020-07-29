@@ -40,7 +40,7 @@ export default function UserInputFormSingle(props) {
           responseType: 'blob', // important
           data: obj,
         }).then((res) => {
-          console.log("response: "+ res)
+          console.log("response: "+ res.data)
           var filename = '';
           var disposition = res.headers['content-disposition'];
           if (disposition && disposition.indexOf('attachment') !== -1) {
