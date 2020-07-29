@@ -50,7 +50,7 @@ export default function UserInputFormSingle(props) {
               filename = matches[1].replace(/['"]/g, '');
               let txtremoved = /\____(.*?)\./;
               filename = filename.replace(txtremoved, '.');
-              conole.log("FIlename: " +filename)
+              console.log("FIlename: " +filename)
             }
           }
           const url = window.URL.createObjectURL(new Blob([res.data]));
