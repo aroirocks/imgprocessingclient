@@ -102,10 +102,12 @@ const Main = () => {
       });
 
       axios.defaults.withCredentials = true;
+      console.log('Data: ' + data);
 
       axios
         .post(`${URL}/upload`, data, config)
         .then((res) => {
+          console.log('response received from server: ' + res);
           const str = res.data;
           const filename = str.map((part) => part.split('uploads/')[1]);
           dispatch(set_file_upload_count(res.data.length));
@@ -120,6 +122,7 @@ const Main = () => {
         })
         .catch((err) => {
           if (err) {
+            console.log('err: ' + err);
             dispatch(showErrors('The upload was not sent'));
           }
         });
