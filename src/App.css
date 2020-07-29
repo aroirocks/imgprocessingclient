@@ -1,0 +1,66 @@
+body {
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  overflow: scroll;
+
+}
+.nav a{
+  font-size: 1.8em !important;
+}
+
+.fileUpload {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  margin: 30px;
+  align-self: center;
+  padding: 10px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
+  background-color: white;
+}
+div.wrapper.dropdown {
+  margin: 10px;
+  box-shadow: 1px 9px 10px rgba(0, 0, 0, 0.3), 0 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.files {
+  position: relative;
+}
+.text-wrapper {
+  border: 8px dashed #e6f5e9;
+  border-radius: 5px;
+}
+
+.btn-a {
+  color: #0c3214;
+}
+
+.button {
+  background-color: #e6f5e9;
+  border-radius: 10px;
+  padding: 0px 8px 0px 10px;
+}
+
+.button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.label {
+  margin-top: 12px;
+  line-height: 0;
+  font-size: 22px;
+  color: #0c3214;
+  letter-spacing: 1.5px;
+}
+
+.input-form {
+  position: fixed;
+  top: -100em;
+}
+
+/* The is to make the page scrollable */
