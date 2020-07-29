@@ -37,6 +37,7 @@ export default function ConfirmationBox() {
               >
                 Process Together
               </button>
+              {process.env.BACKEND_CONNECT}
             </div>
 
             <div className="col text-center">
