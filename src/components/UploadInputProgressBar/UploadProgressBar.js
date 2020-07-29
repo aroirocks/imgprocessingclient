@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   showConfirmationRibbon,
   setDataAction,
@@ -52,8 +52,6 @@ const Main = () => {
 
       if (imageerr) {
         dispatch(showErrors(e.target.files[key].name + ' ' + imageerr));
-
-        // dispatch(showErrors(e.target.files[key].name + ' ' + imageerr));
       }
       ImageLength += e.target.files[key].size;
       filecount += 1;
