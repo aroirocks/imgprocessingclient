@@ -40,7 +40,6 @@ export default function UserInputFormSingle(props) {
           responseType: 'blob', // important
           data: obj,
         }).then((res) => {
-          console.log(res);
           var filename = '';
           var disposition = res.headers['content-disposition'];
           if (disposition && disposition.indexOf('attachment') !== -1) {
@@ -50,7 +49,6 @@ export default function UserInputFormSingle(props) {
               filename = matches[1].replace(/['"]/g, '');
               let txtremoved = /\____(.*?)\./;
               filename = filename.replace(txtremoved, '.');
-              console.log(filename);
             }
           }
           const url = window.URL.createObjectURL(new Blob([res.data]));
@@ -89,7 +87,6 @@ export default function UserInputFormSingle(props) {
   };
 
   const handleCompressChange = (event) => {
-    // console.log(event.target.name, event.target.value);
     onChange(event.target.name, event.target.value);
   };
 
