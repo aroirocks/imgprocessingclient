@@ -40,9 +40,9 @@ export default function UserInputFormSingle(props) {
           responseType: 'blob', // important
           data: obj,
         }).then((res) => {
-          console.log("response: "+ res.headers)
           var filename = '';
           var disposition = res.headers['content-disposition'];
+          console.log(disposition)
           if (disposition && disposition.indexOf('attachment') !== -1) {
             var filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
             var matches = filenameRegex.exec(disposition);
