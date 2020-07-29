@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { URL } from '../../keys';
 import axios from 'axios';
 
@@ -32,7 +32,6 @@ export default function UserInputFormMutiple() {
       responseType: 'blob', // important
       data: obj,
     }).then((res) => {
-      console.log(res);
       var filename = '';
       var disposition = res.headers['content-disposition'];
       if (disposition && disposition.indexOf('attachment') !== -1) {
@@ -71,7 +70,10 @@ export default function UserInputFormMutiple() {
                 {data != null &&
                   data.map((data) => {
                     return (
-                      <div key={data} className="col-xl-auto col-md-auto col-sm-auto col-xs-auto p-4">
+                      <div
+                        key={data}
+                        className="col-xl-auto col-md-auto col-sm-auto col-xs-auto p-4"
+                      >
                         <img src={URL + data} alt="" key={data} />
                       </div>
                     );
@@ -83,9 +85,7 @@ export default function UserInputFormMutiple() {
           <div className="row">
             <div className="col">
               <div className="form-group">
-                <label htmlFor="Compress">
-                  Compress
-                </label>
+                <label htmlFor="Compress">Compress</label>
                 <select
                   className="form-control"
                   value={process.compress}
@@ -98,9 +98,7 @@ export default function UserInputFormMutiple() {
                   <option value="60">60%</option>
                   <option value="80">80%</option>
                 </select>
-                <small className="form-text text-muted">
-                  Compress
-                </small>
+                <small className="form-text text-muted">Compress</small>
               </div>
             </div>
           </div>
@@ -110,9 +108,7 @@ export default function UserInputFormMutiple() {
               <div className="row">
                 <div className="col-xl-6">
                   <div className="form-group">
-                    <label htmlFor="Compress">
-                      Compress
-                    </label>
+                    <label htmlFor="Compress">Compress</label>
                     <select
                       className="form-control"
                       name="convertFrom"
@@ -125,16 +121,13 @@ export default function UserInputFormMutiple() {
                       <option value="webp">WEBP</option>
                       <option value="tiff">TIFF</option>
                     </select>
-                    <small className="form-text text-muted">
-                      From
-                    </small>
+                    <small className="form-text text-muted">From</small>
                   </div>
                 </div>
 
                 <div className="col-xl-6">
                   <div className="form-group">
-                    <label htmlFor="ConvertTo">
-                    </label>
+                    <label htmlFor="ConvertTo"></label>
                     <select
                       className="form-control"
                       value={process.convertTo}
@@ -147,9 +140,7 @@ export default function UserInputFormMutiple() {
                       <option value="webp">WEBP</option>
                       <option value="tiff">TIFF</option>
                     </select>
-                    <small className="form-text text-muted">
-                      To
-                    </small>
+                    <small className="form-text text-muted">To</small>
                   </div>
                 </div>
               </div>
@@ -169,9 +160,7 @@ export default function UserInputFormMutiple() {
                       onChange={handleChange}
                       name="width"
                     />
-                    <small className="form-text text-muted">
-                      Width
-                    </small>
+                    <small className="form-text text-muted">Width</small>
                   </div>
                 </div>
 
@@ -185,9 +174,7 @@ export default function UserInputFormMutiple() {
                       onChange={handleChange}
                       name="height"
                     />
-                    <small className="form-text text-muted">
-                      Height
-                    </small>
+                    <small className="form-text text-muted">Height</small>
                   </div>
                 </div>
               </div>
