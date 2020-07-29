@@ -74,7 +74,7 @@ export default function UserInputFormMutiple() {
                         key={data}
                         className="col-xl-auto col-md-auto col-sm-auto col-xs-auto p-4"
                       >
-                        <img src={URL + data} alt="" key={data} />
+                        <img src={`${URL}/${data}`} alt="" key={data} />
                       </div>
                     );
                   })}

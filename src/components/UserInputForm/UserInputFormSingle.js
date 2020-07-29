@@ -113,7 +113,7 @@ export default function UserInputFormSingle(props) {
             <div className="card-body">
               <div className="row">
                 <div className="col-xl-1 mr-4 align-self-center" align="center">
-                  <img src={URL + data} alt={data} />
+                  <img src={`${URL}/${data}`} alt={data} />
                 </div>
 
                 <div className="col-xl-2 m-1">
