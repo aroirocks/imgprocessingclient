@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import { URL } from '../../keys';
 import axios from 'axios';
+import {set_backdrop} from '../Actions/Index'
 
 export default function UserInputFormMutiple() {
   const { data } = useSelector((state) => state);
+  const dispatch = useDispatch();
   const [process, setProcess] = useState({
     process: {
       imageid: '',
@@ -26,6 +28,7 @@ export default function UserInputFormMutiple() {
 
   const onDownload = () => {
     //send data to server
+    dispatch(set_backdrop(true))
     axios({
       url: `${URL}/processall`,
       method: 'POST',
@@ -48,6 +51,7 @@ export default function UserInputFormMutiple() {
       link.href = url;
       link.setAttribute('download', filename);
       document.body.appendChild(link);
+      dispatch(set_backdrop(false))
       link.click();
     });
   };
