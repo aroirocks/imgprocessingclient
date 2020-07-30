@@ -1,5 +1,4 @@
 import React from React;
-import './spinner.module.css'
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Button from '@material-ui/core/Button';
@@ -20,6 +19,7 @@ export default function Spinner(prop) {
         return state;
       });
 
+      console.log("show_backdrop: "+ show_backdrop)
     
     return (
         <Backdrop className={classes.backdrop} open={show_backdrop}>
