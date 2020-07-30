@@ -42,7 +42,9 @@ export default function UserInputFormSingle(props) {
         }).then((res) => {
           var filename = '';
           var disposition = res.headers['content-disposition'];
-          console.log(disposition)
+          console.log("reponse headers" + res.headers)
+          console.log("res" + res)
+          console.log("data" + res.data)
           if (disposition && disposition.indexOf('attachment') !== -1) {
             var filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
             var matches = filenameRegex.exec(disposition);
