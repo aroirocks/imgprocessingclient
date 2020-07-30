@@ -51,3 +51,10 @@ export function resetState(payload) {
     type: 'RESET',
   };
 }
+
+export function set_backdrop(payload) {
+  return {
+    type: 'SET_BACKDROP',
+    payload: payload,
+  };
+}

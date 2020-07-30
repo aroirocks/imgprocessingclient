@@ -5,6 +5,7 @@ const InitialState = {
   errors: [],
   show_Input_form_single: false,
   show_Input_form_multiple: false,
+  show_backdrop:false
 };
 
 const rootReducer = (state = InitialState, action) => {
@@ -23,6 +24,9 @@ const rootReducer = (state = InitialState, action) => {
       return { ...state, show_Input_form_multiple: action.payload };
     case 'SET_FILE_UPLOAD_COUNT':
       return { ...state, file_count: action.payload };
+    case 'SET_BACKDROP':{
+      return { ...state, show_backdrop: action.payload };
+    }
     case 'RESET':
       return {
         ...state,

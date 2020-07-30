@@ -2,9 +2,11 @@ import React, { Fragment, useState } from 'react';
 import { URL } from '../../keys';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
+import {set_backdrop} from '../Actions/Index'
 
 export default function UserInputFormSingle(props) {
   const { data } = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   const [process, setProcess] = useState({
     process: {
@@ -34,6 +36,7 @@ export default function UserInputFormSingle(props) {
   const onDownload = (event) => {
     Obj.map((obj) => {
       if (parseInt(event.target.name) === parseInt(obj.id)) {
+        dispatch(set_backdrop(true))
         axios({
           url: `${URL}/process`,
           method: 'POST',
@@ -57,6 +60,7 @@ export default function UserInputFormSingle(props) {
           link.href = url;
           link.setAttribute('download', filename);
           document.body.appendChild(link);
+          dispatch(set_backdrop(false))
           link.click();
         });
       }
